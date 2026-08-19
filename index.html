@@ -115,8 +115,464 @@
     align-items:baseline;
     gap:8px;
   }
-  .nav-logo span{color:var(--amber);} 
-  /* ... rest of CSS unchanged ... */
+  .nav-logo span{color:var(--amber);}
+  
+  .nav-links{
+    display:flex;
+    gap:32px;
+    align-items:center;
+  }
+  
+  .nav-links a{
+    font-size:14px;
+    transition:color 0.3s ease;
+  }
+  
+  .nav-links a:hover{
+    color:var(--amber);
+  }
+  
+  .nav-cta{
+    background:var(--amber);
+    color:#0B0D10;
+    padding:8px 16px;
+    border-radius:3px;
+    font-weight:600;
+  }
+  
+  .mobile-toggle{
+    display:none;
+    background:none;
+    border:none;
+    color:var(--text);
+    font-size:24px;
+    cursor:pointer;
+  }
+  
+  .scrub-track{
+    padding:8px 32px;
+    background:rgba(0,0,0,0.2);
+  }
+  
+  .scrub-line{
+    position:relative;
+    height:3px;
+    background:var(--line);
+    border-radius:2px;
+  }
+  
+  .scrub-fill{
+    position:absolute;
+    height:100%;
+    background:var(--cyan);
+    left:0;
+    width:0%;
+  }
+  
+  .scrub-head{
+    position:absolute;
+    width:12px;
+    height:12px;
+    background:var(--amber);
+    border-radius:50%;
+    top:50%;
+    left:0%;
+    transform:translate(-50%, -50%);
+  }
+  
+  .scrub-readout{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  /* ===== HERO SECTION ===== */
+  #hero{
+    padding-top:120px;
+    padding-bottom:80px;
+  }
+
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    margin-bottom:48px;
+  }
+
+  .section-title{
+    font-family:var(--display);
+    font-size:48px;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+
+  .section-tc{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--muted);
+  }
+
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr 320px;
+    gap:48px;
+    align-items:start;
+  }
+
+  .hero-title{
+    font-family:var(--display);
+    font-size:64px;
+    line-height:1.1;
+    margin:24px 0;
+    text-transform:uppercase;
+  }
+
+  .hero-title .line{
+    display:block;
+  }
+
+  .hero-title .accent{
+    color:var(--amber);
+  }
+
+  .hero-title .outline{
+    color:transparent;
+    -webkit-text-stroke:1px var(--amber);
+  }
+
+  .hero-sub{
+    font-size:16px;
+    color:var(--muted);
+    margin-bottom:32px;
+    max-width:500px;
+  }
+
+  .hero-actions{
+    display:flex;
+    gap:16px;
+  }
+
+  .btn{
+    padding:12px 24px;
+    border-radius:4px;
+    font-weight:600;
+    font-size:14px;
+    cursor:pointer;
+    border:none;
+    transition:all 0.3s ease;
+    display:inline-block;
+  }
+
+  .btn-primary{
+    background:var(--amber);
+    color:#0B0D10;
+  }
+
+  .btn-primary:hover{
+    background:#FF9844;
+    transform:translateY(-2px);
+  }
+
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--text);
+    background:transparent;
+  }
+
+  .btn-ghost:hover{
+    border-color:var(--amber);
+    color:var(--amber);
+  }
+
+  .hero-panel{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:20px;
+  }
+
+  .hero-panel-label{
+    display:flex;
+    justify-content:space-between;
+    font-family:var(--mono);
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--muted);
+    margin-bottom:12px;
+  }
+
+  .format-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:20px;
+  }
+
+  .format-tag{
+    background:var(--panel-raised);
+    border:1px solid var(--line);
+    padding:6px 12px;
+    border-radius:3px;
+    font-size:11px;
+    color:var(--text);
+  }
+
+  .waveform{
+    height:40px;
+    background:linear-gradient(90deg, var(--cyan-dim) 0%, var(--amber-dim) 100%);
+    border-radius:3px;
+    opacity:0.6;
+  }
+
+  /* ===== MARQUEE ===== */
+  .marquee{
+    background:var(--panel);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    padding:20px 0;
+  }
+
+  .marquee-track{
+    display:flex;
+    gap:40px;
+    animation:scroll-left 20s linear infinite;
+    will-change:transform;
+  }
+
+  .marquee-item{
+    font-family:var(--display);
+    font-size:18px;
+    text-transform:uppercase;
+    white-space:nowrap;
+    color:var(--text);
+  }
+
+  @keyframes scroll-left{
+    0%{transform:translateX(0);}
+    100%{transform:translateX(-50%);}
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  #about{
+    padding:80px 0;
+  }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 280px;
+    gap:48px;
+    align-items:start;
+  }
+
+  .photo-frame{
+    position:relative;
+  }
+
+  .frame-inner{
+    position:relative;
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:20px;
+  }
+
+  .corner{
+    position:absolute;
+    width:20px;
+    height:20px;
+    border:2px solid var(--amber);
+  }
+
+  .corner.tl{
+    top:0;
+    left:0;
+    border-right:none;
+    border-bottom:none;
+  }
+
+  .corner.tr{
+    top:0;
+    right:0;
+    border-left:none;
+    border-bottom:none;
+  }
+
+  .corner.bl{
+    bottom:0;
+    left:0;
+    border-right:none;
+    border-top:none;
+  }
+
+  .corner.br{
+    bottom:0;
+    right:0;
+    border-left:none;
+    border-top:none;
+  }
+
+  .photo-tag{
+    position:absolute;
+    top:12px;
+    right:12px;
+    background:var(--amber);
+    color:#0B0D10;
+    padding:4px 12px;
+    font-size:10px;
+    font-weight:600;
+    text-transform:uppercase;
+    z-index:10;
+  }
+
+  .photo-rec{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#E63946;
+    color:white;
+    padding:4px 12px;
+    font-size:10px;
+    font-weight:600;
+    text-transform:uppercase;
+    border-radius:2px;
+    z-index:10;
+    animation:blink 1s ease-in-out infinite;
+  }
+
+  @keyframes blink{
+    0%, 100%{opacity:1;}
+    50%{opacity:0.5;}
+  }
+
+  .photo-caption{
+    margin-top:16px;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+  }
+
+  .about-text{
+    padding-top:20px;
+  }
+
+  .about-text p{
+    margin-bottom:16px;
+    font-size:15px;
+    line-height:1.7;
+    color:var(--text);
+  }
+
+  .stat-row{
+    display:flex;
+    gap:24px;
+    margin-top:32px;
+  }
+
+  .stat{
+    flex:1;
+  }
+
+  .stat-num{
+    font-family:var(--display);
+    font-size:32px;
+    color:var(--amber);
+  }
+
+  .stat-label{
+    font-family:var(--mono);
+    font-size:10px;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-top:4px;
+  }
+
+  .meters-col{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+
+  .meter{
+    background:var(--panel);
+    border:1px solid var(--line);
+    padding:12px;
+    border-radius:4px;
+  }
+
+  .meter-top{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    margin-bottom:8px;
+  }
+
+  .meter-top span:first-child{
+    font-weight:600;
+  }
+
+  .meter-top span:last-child{
+    color:var(--muted);
+  }
+
+  .meter-track{
+    height:6px;
+    background:var(--panel-raised);
+    border-radius:3px;
+    overflow:hidden;
+  }
+
+  .meter-fill{
+    height:100%;
+    background:linear-gradient(90deg, var(--cyan), var(--amber));
+    width:var(--fill, 50%);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px){
+    .nav-links{
+      display:none;
+    }
+    
+    .mobile-toggle{
+      display:block;
+    }
+    
+    .hero-grid{
+      grid-template-columns:1fr;
+      gap:32px;
+    }
+    
+    .hero-title{
+      font-size:40px;
+    }
+    
+    .about-grid{
+      grid-template-columns:1fr;
+      gap:32px;
+    }
+  }
+
+  .reveal{
+    opacity:1;
+    animation:fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  .reveal-d1{
+    animation-delay:0.2s;
+  }
+
+  .reveal-d2{
+    animation-delay:0.4s;
+  }
 </style>
 </head>
 <body>
@@ -150,7 +606,7 @@
 
     <div class="hero-grid">
       <div>
-        <div class="hero-tc">Video Editor — Reels & Shorts</div>
+        <div class="hero-tc" style="font-size:12px;color:var(--muted);margin-bottom:12px;">Video Editor — Reels & Shorts</div>
         <h1 class="hero-title">
           <span class="line"><span>Motion</span></span>
           <span class="line"><span class="accent">Cuts</span></span>
@@ -178,7 +634,6 @@
 
 <div class="marquee">
   <div class="marquee-track" id="marqueeTrack">
-    <!-- duplicated via JS for seamless loop -->
     <span class="marquee-item">Premiere Pro</span>
     <span class="marquee-item">CapCut</span>
     <span class="marquee-item">Alight Motion</span>
@@ -187,6 +642,10 @@
     <span class="marquee-item">Motion Graphics</span>
     <span class="marquee-item">Reels &amp; Shorts</span>
     <span class="marquee-item">Sound Design</span>
+    <span class="marquee-item">Premiere Pro</span>
+    <span class="marquee-item">CapCut</span>
+    <span class="marquee-item">Alight Motion</span>
+    <span class="marquee-item">InShot</span>
   </div>
 </div>
 
@@ -204,18 +663,18 @@
           <span class="corner bl"></span><span class="corner br"></span>
           <span class="photo-tag">On Camera</span>
           <span class="photo-rec">REC</span>
-          <img src="./mashood.png" alt="Portrait of Mashood Ahmad, video editor">
+          <img src="./mashood.png" alt="Portrait of Mashood Ahmad, video editor" style="width:100%;height:auto;">
         </div>
         <div class="photo-caption">MASHOOD AHMAD — EDITOR</div>
       </div>
       <div class="about-text reveal reveal-d1">
-        <p>Mashood Ahmad is a video editor focused on short-form and social content — the kind that has to earn attention in the first second. His edits lean on clean cuts, purposeful transitions, and motion graphics that support the story instead of distracting from it.</p>
-        <p>Trained through a structured path across <strong>Premiere Pro, CapCut, Alight Motion, and InShot</strong>, he works comfortably across both desktop and mobile-first editing workflows — a rare combination that fits how modern content actually gets made and published.</p>
+        <p>Mashood Ahmad is a video editor focused on short-form and social content — the kind that has to earn attention in the first second. His edits lean on clean cuts, purposeful transitions, and motion that enhances, not distracts.</p>
+        <p>Trained through a structured path across <strong>Premiere Pro, CapCut, Alight Motion, and InShot</strong>, he works comfortably across both desktop and mobile-first editing workflows — adapting to the platform's constraints and strengths.</p>
         <p>Currently taking on freelance projects: reels, YouTube edits, motion titles, and color grading.</p>
         <div class="stat-row">
-          <div class="stat"><div class="stat-num" data-count="7">0</div><div class="stat-label">Certifications</div></div>
-          <div class="stat"><div class="stat-num" data-count="4">0</div><div class="stat-label">Editing Tools</div></div>
-          <div class="stat"><div class="stat-num" data-count="3">0</div><div class="stat-label">Formats Covered</div></div>
+          <div class="stat"><div class="stat-num" data-count="7">7</div><div class="stat-label">Certifications</div></div>
+          <div class="stat"><div class="stat-num" data-count="4">4</div><div class="stat-label">Editing Tools</div></div>
+          <div class="stat"><div class="stat-num" data-count="3">3</div><div class="stat-label">Formats Covered</div></div>
         </div>
       </div>
       <div class="meters-col reveal reveal-d2">
@@ -223,12 +682,38 @@
           <div class="meter-top"><span>Premiere Pro</span><span>Advanced</span></div>
           <div class="meter-track"><div class="meter-fill"></div></div>
         </div>
-
-        <!-- rest of HTML unchanged -->
+        <div class="meter" style="--fill:85%">
+          <div class="meter-top"><span>CapCut</span><span>Advanced</span></div>
+          <div class="meter-track"><div class="meter-fill"></div></div>
+        </div>
+        <div class="meter" style="--fill:78%">
+          <div class="meter-top"><span>Alight Motion</span><span>Intermediate</span></div>
+          <div class="meter-track"><div class="meter-fill"></div></div>
+        </div>
+        <div class="meter" style="--fill:70%">
+          <div class="meter-top"><span>Color Grading</span><span>Intermediate</span></div>
+          <div class="meter-track"><div class="meter-fill"></div></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<script>
+  // Scroll progress indicator
+  window.addEventListener('scroll', () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = (window.scrollY / scrollHeight) * 100;
+    document.getElementById('scrubFill').style.width = scrolled + '%';
+    document.getElementById('scrubHead').style.left = scrolled + '%';
+  });
+
+  // Marquee duplication for seamless loop
+  const marqueeTrack = document.getElementById('marqueeTrack');
+  const items = marqueeTrack.querySelectorAll('.marquee-item');
+  items.forEach(item => {
+    marqueeTrack.appendChild(item.cloneNode(true));
+  });
+</script>
 </body>
 </html>
